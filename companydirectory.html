@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Company Directory</title>
+		<meta name="description" content="Company Directory">
+		<meta name="keywords" content="company, directory, personnel">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Local styles -->
+		<link rel="stylesheet" href="./libs/css/styles.css">
+		<link rel="stylesheet" href="./libs/css/queries.css">
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./libs/img/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./libs/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./libs/img/favicon-16x16.png">
+		<link rel="manifest" href="./libs/img/site.webmanifest">
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="./libs/vendor/bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+			<header>
+				<nav class="navbar-top">
+						<div class="navbar-title">
+							<div class="btn-open">
+								<i class="fas fa-filter"></i>Filters
+							</div>
+							<div class="btn-closed hidden">
+								<i class="fas fa-filter"></i>Filters
+							</div>
+							<h5>Company Directory</h5>
+						</div>
+						<div class="nav-input">
+							<input class="form-control" type="search" placeholder="Search profile" id="search">
+						</div>
+				</nav>
+			</header>
+			<main>
+				<div class="wrapper">
+					<div class="filters-wrapper hidden">
+						<div class="button-box">
+							<!-- Button triggers new profile modal -->
+							<div class="btn-newProfile" data-bs-toggle="modal" data-bs-target="#newprofile">
+								New Profile
+							</div>
+						</div>
+						<hr>
+						<div class="filter-box">
+							<div class="filter-title-department">
+								<h5>Department</h5>
+								<i class="fas fa-sliders-h"></i>
+							</div>
+							<div class="filter-box-department">
+								<div class="filter-content" id="department-filters">
+									<!-- checkboxes -->
+								</div>
+								<div class="filters-buttons">
+									<button class="btn btn-outline-primary" id="btn-filter-department">Apply filters</button>
+									<button class="btn btn-outline-danger" id="btn-resetFilters-department">Reset</button>
+								</div>
+								<div class="btn-editFilter" data-bs-toggle="modal" data-bs-target="#newDepartment">
+									Edit Department								
+								</div>
+							</div>
+						</div>				
+							
+						<hr>
+						<div class="filter-box">
+							<div class="filter-title-location">
+								<h5>Location</h5>
+								<i class="fas fa-sliders-h"></i>
+							</div>
+							<div class="filter-box-location">
+								<div class="filter-content" id="location-filters">
+									<!-- checkboxes -->
+								</div>
+								<div class="filters-buttons">
+									<button class="btn btn-outline-primary" id="btn-filter-location">Apply filters</button>
+									<button class="btn btn-outline-danger" id="btn-resetFilters-location">Reset</button>
+								</div>
+								<div class="btn-editFilter" data-bs-toggle="modal" data-bs-target="#newLocation">
+									Edit Location								
+								</div>
+							</div>	
+						</div>
+            <hr>
+					</div>
+					<div class="cards-wrapper view" id="cards-list">
+						<!-- Employee cards -->
+					</div>
+				</div>
+				<!-- New Profile modal -->
+				<div class="modal fade" id="newprofile" tabindex="-1" aria-labelledby="newprofile" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="newprofile">New Profile</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="form-profile">
+									<div class="new-profile-field">
+										<label for="profile-firstName" class="form-label">First Name</label>
+										<input type="text" class="form-control" id="profile-firstName" required/>
+									</div>
+									<div class="new-profile-field">
+										<label for="profile-lastName" class="form-label">Last Name</label>
+										<input type="text" class="form-control" id="profile-lastName" required/>
+									</div>
+									<div class="new-profile-field">
+										<label for="profile-jobTitle" class="form-label">Job Title</label>
+										<input type="text" class="form-control" id="profile-jobTitle" required/>
+									</div>
+									<div class="new-profile-field">
+										<label for="profile-email" class="form-label">Email</label>
+										<input type="email" class="form-control" id="profile-email" required/>
+									</div>
+									<div class="new-profile-field">
+										<label for="profile-department" class="form-label">Department</label>
+										<select class="form-select" id="profile-department">
+											<option value disabled hidden selected>Choose a department</option>
+											<!-- Options generated via js -->
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-danger" id="btn-reset-profile">Reset</button>
+								<button type="button" class="btn btn-outline-primary" id="btn-create-profile">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Edit department modal -->
+				<div class="modal fade" id="newDepartment" tabindex="-1" aria-labelledby="newDepartment" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="newDepartment">Departments</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="container" id="department-list">
+									<div class="department-box">
+										<!-- Departments + remove buttons -->
+									</div>	
+								</div>
+								<hr>
+								<div class="add-department" id="add-department">
+									<label for="department-name">Department:</label>
+									<input type="text" id="department-name" class="form-control">
+									<label for="department-location" class="form-label">Location</label>
+									<select class="form-select" id="department-location">
+										<option value disabled hidden selected>Choose a location</option>
+										<!-- Options generated via js -->
+									<select>
+									<button type="button" class="btn btn-outline-primary" id="btn-newDepartment">Add</button>
+								</div>	
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Edit location modal -->				
+				<div class="modal fade" id="newLocation" tabindex="-1" aria-labelledby="newLocation" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="newLocation">Locations</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="container">
+									<div id="location-list">
+										<!-- Location + remove buttons -->
+									</div>
+								</div>
+								<hr>
+								<div class="add-location">
+									<label for="location-name">New location:</label>
+									<input type="text" class="form-control" id="location-name"><br>
+									<button type="button" class="btn btn-outline-primary" id="btn-newLocation">Add</button>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Edit profile modal -->
+				<div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="editProfile" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="editProfile">Edit Profile</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close-editProfile"></button>
+							</div>
+							<div class="modal-body">
+								<div class="form-profile">
+									<div class="new-profile-field">
+										<label for="edit-profile-firstName" class="form-label">First Name</label>
+										<input type="text" class="form-control" id="edit-profile-firstName"/>
+									</div>
+									<div class="new-profile-field">
+										<label for="edit-profile-lastName" class="form-label">Last Name</label>
+										<input type="text" class="form-control" id="edit-profile-lastName"/>
+									</div>
+									<div class="new-profile-field">
+										<label for="edit-profile-jobTitle" class="form-label">Job Title</label>
+										<input type="text" class="form-control" id="edit-profile-jobTitle"/>
+									</div>
+									<div class="new-profile-field">
+										<label for="edit-profile-email" class="form-label">Email</label>
+										<input type="email" class="form-control" id="edit-profile-email"/>
+									</div>
+									<div class="new-profile-field">
+										<label for="edit-profile-department" class="form-label">Department</label>
+										<select class="form-select" id="edit-profile-department">
+											<!-- Options generated via js -->
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-danger" id="btn-remove-editProfile">Remove</button>
+								<button type="button" class="btn btn-outline-primary" id="btn-save-editProfile">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<!-- Page loader -->
+			<div class="loader-wrapper">
+				<span class="loader"><span class="loader-inner"></span></span>
+			</div>
+    	<!-- Vendor scripts -->
+      <script src="./libs/vendor/jquery/jquery.min.js"></script>
+      <script src="./libs/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="https://kit.fontawesome.com/46aab30c04.js" crossorigin="anonymous"></script>
+      <script src="./libs/js/index.js"></script>
+    </body>
+</html>
