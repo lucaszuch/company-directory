@@ -1,13 +1,11 @@
 <?php
-	// example use from browser
-	// http://localhost/company/libs/php/getPersonnelByID.php?id=2
-	// remove next two lines for production
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL);
 
 	$executionStartTime = microtime(true);
-	include("config.php");
 
+	include("config.php");
+	header('Content-Type: application/json; charset=UTF-8');
 	$conn = new mysqli($cd_host, $cd_user, $cd_password, $cd_dbname, $cd_port, $cd_socket);
 
 	if (mysqli_connect_errno()) {		
@@ -16,14 +14,14 @@
 		$output['status']['description'] = "database unavailable";
 		$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
 		$output['data'] = [];
-		
-		mysqli_close($conn);
-		echo json_encode($output); 
-		exit;
-	}	
 
-	$query = 'SELECT p.lastName, p.firstName, p.jobTitle, p.email, d.id, d.name as department, l.name as location FROM personnel p LEFT JOIN department d ON (d.id = p.departmentID) LEFT JOIN location l ON (l.id = d.locationID) WHERE p.id =' . $_REQUEST['search'] . ' ORDER BY p.lastName, p.firstName, d.name, l.name';
-	//$query = 'SELECT p.lastName, p.firstName, p.jobTitle, p.email, d.id, d.name as department, l.name as location FROM personnel p LEFT JOIN department d ON (d.id = p.departmentID) LEFT JOIN location l ON (l.id = d.locationID) WHERE p.id =' . $_POST['search'] . ' ORDER BY p.lastName, p.firstName, d.name, l.name';
+		mysqli_close($conn);
+		echo json_encode($output);
+		exit;
+  }
+
+  //$query = 'SELECT COUNT(id) FROM personnel WHERE departmentID = ' . $_POST['id'];
+	$query = 'SELECT COUNT(id) as PersonnelCount FROM personnel WHERE departmentID = ' . $_REQUEST['departmentID'];
 	$result = $conn->query($query);
 	
 	if (!$result) {
@@ -31,13 +29,13 @@
 		$output['status']['name'] = "executed";
 		$output['status']['description'] = "query failed";	
 		$output['data'] = [];
-
 		mysqli_close($conn);
 		echo json_encode($output); 
 		exit;
-	}
-   
-   	$data = [];
+
+	} 
+
+  $data = [];
 
 	while ($row = mysqli_fetch_assoc($result)) {
 		array_push($data, $row);
@@ -48,8 +46,7 @@
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
 	$output['data'] = $data;
-
-	header('Content-Type: application/json; charset=UTF-8');	
+	
 	mysqli_close($conn);
 	echo json_encode($output); 
 ?>

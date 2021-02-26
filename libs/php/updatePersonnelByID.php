@@ -22,8 +22,8 @@
 		exit;
 	}	
 
-	//$query = 'UPDATE personnel SET firstName ="' . $_REQUEST['editFirstName'] . '", lastName="' . $_REQUEST['editLastName'] . '", jobTitle ="' . $_REQUEST['editJobTitle'] . '", email ="' . $_REQUEST['editEmail'] . '", departmentID =' . $_REQUEST['editDepartment'] . ' WHERE id =' . $_REQUEST['targetID'];
-	$query = 'UPDATE personnel SET firstName ="' . $_POST['editFirstName'] . '", lastName="' . $_POST['editLastName'] . '", jobTitle ="' . $_POST['editJobTitle'] . '", email ="' . $_POST['editEmail'] . '", departmentID =' . $_POST['editDepartment'] . ' WHERE id =' . $_POST['targetID'];
+	$query = 'UPDATE personnel SET firstName ="' . $_REQUEST['editFirstName'] . '", lastName="' . $_REQUEST['editLastName'] . '", jobTitle ="' . $_REQUEST['editJobTitle'] . '", email ="' . $_REQUEST['editEmail'] . '", departmentID =' . $_REQUEST['editDepartment'] . ' WHERE id =' . $_REQUEST['targetID'];
+	//$query = 'UPDATE personnel SET firstName ="' . $_POST['editFirstName'] . '", lastName="' . $_POST['editLastName'] . '", jobTitle ="' . $_POST['editJobTitle'] . '", email ="' . $_POST['editEmail'] . '", departmentID =' . $_POST['editDepartment'] . ' WHERE id =' . $_POST['targetID'];
 	
 	$result = $conn->query($query);
 	

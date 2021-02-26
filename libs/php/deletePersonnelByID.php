@@ -24,8 +24,8 @@
 		exit;
 	}	
 
-	//$query = 'DELETE FROM personnel WHERE id = ' . $_REQUEST['targetID'];
-	$query = 'DELETE FROM personnel WHERE id = ' . $_POST['targetID'];
+	$query = 'DELETE FROM personnel WHERE id = ' . $_REQUEST['targetID'];
+	//$query = 'DELETE FROM personnel WHERE id = ' . $_POST['targetID'];
 
 	$result = $conn->query($query);
 	

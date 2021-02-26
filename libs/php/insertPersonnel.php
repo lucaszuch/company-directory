@@ -24,8 +24,8 @@
 		exit;
   }
 
-	//$query = 'INSERT INTO personnel (firstName, lastName, jobTitle, email, departmentID) VALUES("' . $_REQUEST['firstName'] . '","' .  $_REQUEST['lastName'] . '","' .  $_REQUEST['jobTitle'] . '","' . $_REQUEST['email'] . '","' . $_REQUEST['departmentID'] . '")';
-	$query = 'INSERT INTO personnel (firstName, lastName, jobTitle, email, departmentID) VALUES("' . $_POST['firstName'] . '","' .  $_POST['lastName'] . '","' .  $_POST['jobTitle'] . '","' . $_POST['email'] . '","' . $_POST['departmentID'] . '")';
+	$query = 'INSERT INTO personnel (firstName, lastName, jobTitle, email, departmentID) VALUES("' . $_REQUEST['firstName'] . '","' .  $_REQUEST['lastName'] . '","' .  $_REQUEST['jobTitle'] . '","' . $_REQUEST['email'] . '","' . $_REQUEST['departmentID'] . '")';
+	//$query = 'INSERT INTO personnel (firstName, lastName, jobTitle, email, departmentID) VALUES("' . $_POST['firstName'] . '","' .  $_POST['lastName'] . '","' .  $_POST['jobTitle'] . '","' . $_POST['email'] . '","' . $_POST['departmentID'] . '")';
 
 	$result = $conn->query($query);
 	

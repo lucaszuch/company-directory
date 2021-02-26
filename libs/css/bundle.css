@@ -353,3 +353,210 @@ main {
   75% { height: 100%;}
   100% { height: 0%;}
 }
+
+@media only screen and (max-width: 1400px) and (orientation: landscape) {
+  .navbar-title {
+    width: 25%;
+  }
+
+  .filter-box-department, .filter-box-location {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .navbar-title {
+    width: 30%;
+  }
+
+  .filters-wrapper {
+    width: 25%;
+  }
+
+  .filter-box-department, .filter-box-location {
+    width: 100%;
+  }
+
+  .filters-buttons {
+    width: 95%;
+  }
+
+  .card-model {
+    width: 32rem;
+  }
+
+  .card-model ul {
+    width: 23rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+
+  .filters-wrapper {
+    width: 25%;
+  }
+
+  .filter-box-department, .filter-box-location {
+    width: 100%;
+  }
+
+  .filters-buttons {
+    width: 90%;
+  }
+
+  .card-model {
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+    width: 21rem;
+  }
+
+  .card-model img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .card-model ul {
+    width: 13rem;
+  }
+}
+
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+
+  .navbar-title {
+    width: 40%;
+  }
+
+  .nav-input {
+    width: 50%;
+  }
+
+  .filters-wrapper {
+    width: 30%;
+  }
+
+  .cards-wrapper {
+    width: 65%;
+  }
+
+  .filters-buttons {
+    width: 100%;
+  }
+
+  .card-model {
+    width: 26rem;
+  }
+
+  .card-model img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .card-model ul {
+    width: 18rem;
+  }
+}
+
+@media only screen and (max-width: 850px) and (orientation: landscape) {
+
+  .navbar-title {
+    width: 40%;
+  }
+
+  .nav-input {
+    width: 50%;
+  }
+
+  .filters-wrapper {
+    width: 30%;
+  }
+
+  .filters-buttons {
+    width: 100%;
+  }
+
+  .cards-wrapper {
+    width: 65%;
+  }
+
+  .card-model {
+    width: 26rem;
+  }
+
+  .card-model img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .card-model ul {
+    width: 18rem;
+  }
+}
+
+@media only screen and (max-width: 450px) and (orientation: portrait) {
+
+  header h5 {
+    display: none;
+  }
+
+  .navbar-title {
+    width: 40%;
+  }
+
+  .nav-input {
+    width: 65%;
+  }
+
+  .btn-open {
+    display: flex;
+  }
+
+  /* Css effects */
+  .open {
+    display: flex;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .filters-wrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: none;
+  }
+
+  #department-list input {
+    width: 50%;
+  }
+
+  .cards-wrapper {
+    width: 100%;
+  }
+
+  .btn-box {
+    width: 47%;
+  }
+
+  .filters-buttons {
+    width: 80%;
+  }
+
+  .card-model {
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+    width: 21rem;
+  }
+
+  .card-model img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .card-model ul {
+    width: 13rem;
+  }
+}

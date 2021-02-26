@@ -24,8 +24,8 @@
 		exit;
 	}	
 
-	//$query = 'DELETE FROM department WHERE id = ' . $_REQUEST['departmentID'];
-	$query = 'DELETE FROM department WHERE id = ' . $_POST['departmentID'];
+	$query = 'DELETE FROM department WHERE id = ' . $_REQUEST['departmentID'];
+	//$query = 'DELETE FROM department WHERE id = ' . $_POST['departmentID'];
 
 	$result = $conn->query($query);
 	

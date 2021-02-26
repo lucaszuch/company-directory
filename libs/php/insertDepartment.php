@@ -24,8 +24,8 @@
 		exit;
 	}	
 
-	//$query = 'INSERT INTO department (name, locationID) VALUES("' . $_REQUEST['departmentName'] . '",' . $_REQUEST["departmentLocation"] . ')';
-	$query = 'INSERT INTO department (name, locationID) VALUES("' . $_POST['departmentName'] . '",' . $_POST["departmentLocation"] . ')';
+	$query = 'INSERT INTO department (name, locationID) VALUES("' . $_REQUEST['departmentName'] . '",' . $_REQUEST["departmentLocation"] . ')';
+	//$query = 'INSERT INTO department (name, locationID) VALUES("' . $_POST['departmentName'] . '",' . $_POST["departmentLocation"] . ')';
 
 	$result = $conn->query($query);
 	

@@ -22,8 +22,8 @@
 		exit;
 	}	
 
-	//$query = 'UPDATE location SET name ="' . $_REQUEST['targetLocation'] . '" WHERE id =' . $_REQUEST['targetID'];
-	$query = 'UPDATE location SET name ="' . $_POST['targetLocation'] . '" WHERE id =' . $_POST['targetID'];
+	$query = 'UPDATE location SET name ="' . $_REQUEST['targetLocation'] . '" WHERE id =' . $_REQUEST['targetID'];
+	//$query = 'UPDATE location SET name ="' . $_POST['targetLocation'] . '" WHERE id =' . $_POST['targetID'];
 	
 	$result = $conn->query($query);
 	

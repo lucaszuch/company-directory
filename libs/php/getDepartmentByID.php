@@ -22,8 +22,8 @@
 		exit;
 	}	
 
-	//$query = 'SELECT id, name, locationID FROM department WHERE id = ' . $_REQUEST['id'];
-	$query = 'SELECT id, name, locationID FROM department WHERE id = ' . $_POST['id'];
+	$query = 'SELECT id, name, locationID FROM department WHERE id = ' . $_REQUEST['id'];
+	//$query = 'SELECT id, name, locationID FROM department WHERE id = ' . $_POST['id'];
 
 	$result = $conn->query($query);
 	

@@ -24,8 +24,8 @@
 		exit;
 	}	
 
-	//$query = 'INSERT INTO location (name) VALUES("' . $_REQUEST['locationName'] . '")';
-	$query = 'INSERT INTO location (name) VALUES("' . $_POST['locationName'] . '")';
+	$query = 'INSERT INTO location (name) VALUES("' . $_REQUEST['locationName'] . '")';
+	//$query = 'INSERT INTO location (name) VALUES("' . $_POST['locationName'] . '")';
 
 	$result = $conn->query($query);
 	

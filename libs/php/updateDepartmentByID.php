@@ -22,8 +22,8 @@
 		exit;
 	}	
 
-	//$query = 'UPDATE department SET name ="' . $_REQUEST['targetDepartment'] . '" WHERE id =' . $_REQUEST['targetID'];
-	$query = 'UPDATE department SET name ="' . $_POST['targetDepartment'] . '" WHERE id =' . $_POST['targetID'];
+	$query = 'UPDATE department SET name ="' . $_REQUEST['targetDepartment'] . '" WHERE id =' . $_REQUEST['targetID'];
+	//$query = 'UPDATE department SET name ="' . $_POST['targetDepartment'] . '" WHERE id =' . $_POST['targetID'];
 	
 	$result = $conn->query($query);
 	

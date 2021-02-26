@@ -25,7 +25,7 @@
 							<div class="btn-open">
 								<i class="fas fa-filter"></i>Filters
 							</div>
-							<div class="btn-closed hidden">
+							<div class="btn-closed">
 								<i class="fas fa-filter"></i>Filters
 							</div>
 							<h5>Company Directory</h5>
@@ -37,7 +37,7 @@
 			</header>
 			<main>
 				<div class="wrapper">
-					<div class="filters-wrapper hidden">
+					<div class="filters-wrapper">
 						<div class="button-box">
 							<!-- Button triggers new profile modal -->
 							<div class="btn-newProfile" data-bs-toggle="modal" data-bs-target="#newprofile">
@@ -56,7 +56,7 @@
 								</div>
 								<div class="filters-buttons">
 									<button class="btn btn-outline-primary" id="btn-filter-department">Apply filters</button>
-									<button class="btn btn-outline-danger" id="btn-resetFilters-department">Reset</button>
+									<button class="btn btn-outline-danger" id="btn-resetFilters-department">Reset filters</button>
 								</div>
 								<div class="btn-editFilter" data-bs-toggle="modal" data-bs-target="#newDepartment">
 									Edit Department								
@@ -76,7 +76,7 @@
 								</div>
 								<div class="filters-buttons">
 									<button class="btn btn-outline-primary" id="btn-filter-location">Apply filters</button>
-									<button class="btn btn-outline-danger" id="btn-resetFilters-location">Reset</button>
+									<button class="btn btn-outline-danger" id="btn-resetFilters-location">Reset filters</button>
 								</div>
 								<div class="btn-editFilter" data-bs-toggle="modal" data-bs-target="#newLocation">
 									Edit Location								
@@ -85,7 +85,7 @@
 						</div>
             <hr>
 					</div>
-					<div class="cards-wrapper view" id="cards-list">
+					<div class="cards-wrapper" id="cards-list">
 						<!-- Employee cards -->
 					</div>
 				</div>
@@ -227,6 +227,45 @@
 							<div class="modal-footer">
 								<button type="button" class="btn btn-outline-danger" id="btn-remove-editProfile">Remove</button>
 								<button type="button" class="btn btn-outline-primary" id="btn-save-editProfile">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Messages modal -->				
+				<div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="alertModal">Notification</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="container">
+									<p id="alertMessage"></p>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" id="confirmMessage">Confim</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Confirmation modal -->				
+				<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="confirmModal">Notification</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="container">
+									<p>Would you like to proceed?</p>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">No</button>
+								<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="confirmationYes">Yes</button>
 							</div>
 						</div>
 					</div>

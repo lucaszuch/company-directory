@@ -24,8 +24,8 @@
 		exit;
 	}	
 
-	//$query = 'DELETE FROM location WHERE id = ' . $_REQUEST['locationID'];
-	$query = 'DELETE FROM location WHERE id = ' . $_POST['locationID'];
+	$query = 'DELETE FROM location WHERE id = ' . $_REQUEST['locationID'];
+	//$query = 'DELETE FROM location WHERE id = ' . $_POST['locationID'];
 
 	$result = $conn->query($query);
 	
