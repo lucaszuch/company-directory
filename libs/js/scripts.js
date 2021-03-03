@@ -544,7 +544,8 @@ $('document').ready(function() {
     $('.loader-wrapper').fadeIn('slow');
 
     //Reset cards
-    $('#cards-list').reset();
+    $('#cards-list').empty();
+    getAllCards();
 
     //Reset department list
     $('#profile-department').empty();
@@ -562,11 +563,6 @@ $('document').ready(function() {
 
     //Reset alert message
     $('#alertMessage').empty();
-
-    //Reset forms
-    resetDeparmentForm();
-    resetLocationForm();
-    resetProfileForm();
 
     //Removes loading screen and close the modal
     $('.loader-wrapper').fadeOut('slow');
