@@ -20,7 +20,7 @@
 		exit;
   }
 
-  //$query = 'SELECT COUNT(id) FROM personnel WHERE departmentID = ' . $_POST['id'];
+  //$query = 'SELECT COUNT(id) as PersonnelCount FROM personnel WHERE departmentID = ' . $_POST['departmentID'];
 	$query = 'SELECT COUNT(id) as PersonnelCount FROM personnel WHERE departmentID = ' . $_REQUEST['departmentID'];
 	$result = $conn->query($query);
 	

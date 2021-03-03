@@ -282,6 +282,11 @@ main {
   width: 100%;
 }
 
+#newDepartment .modal-body {
+  max-height: 70vh;
+  overflow: auto;
+}
+
 #location-list {
   display: flex;
   flex-direction: column;
@@ -300,6 +305,11 @@ main {
 
 .add-location input {
   width: 60%;
+}
+
+#newDepartment .modal-body {
+  max-height: 70vh;
+  overflow: auto;
 }
 
 .btn-box {

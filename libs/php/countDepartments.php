@@ -21,7 +21,7 @@
 		exit;
   }
 
-  //$query = 'SELECT COUNT(name) FROM department WHERE locationID = ' . $_POST['id'];
+  //$query = 'SELECT COUNT(name) as departmentCount FROM department WHERE locationID = ' . $_POST['locationID'];
 	$query = 'SELECT COUNT(name) as departmentCount FROM department WHERE locationID = ' . $_REQUEST['locationID'];
 	$result = $conn->query($query);
 	

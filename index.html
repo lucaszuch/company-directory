@@ -8,8 +8,7 @@
 		<meta name="keywords" content="company, directory, personnel">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Local styles -->
-		<link rel="stylesheet" href="./libs/css/styles.css">
-		<link rel="stylesheet" href="./libs/css/queries.css">
+		<link rel="stylesheet" href="./libs/css/minified.css">
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="./libs/img/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="./libs/img/favicon-32x32.png">
@@ -250,12 +249,12 @@
 						</div>
 					</div>
 				</div>
-				<!-- Confirmation modal -->				
-				<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true">
+				<!-- Confirmation Edit modal -->				
+				<div class="modal fade" id="confirmEditModal" tabindex="-1" aria-labelledby="confirmEditModal" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="confirmModal">Notification</h5>
+								<h5 class="modal-title" id="confirmEditModal">Notification</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
@@ -265,7 +264,27 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">No</button>
-								<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="confirmationYes">Yes</button>
+								<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="confirmEdit">Yes</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Confirmation delete modal -->				
+				<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModal" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="confirmDeleteModal">Notification</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="container">
+									<p>Would you like to proceed?</p>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">No</button>
+								<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" id="confirmDelete">Yes</button>
 							</div>
 						</div>
 					</div>
@@ -279,6 +298,6 @@
       <script src="./libs/vendor/jquery/jquery.min.js"></script>
       <script src="./libs/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="https://kit.fontawesome.com/46aab30c04.js" crossorigin="anonymous"></script>
-      <script src="./libs/js/index.js"></script>
+      <script src="./libs/js/scripts.js"></script>
     </body>
 </html>
