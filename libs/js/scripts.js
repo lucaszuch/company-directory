@@ -28,7 +28,7 @@ function getAllDepartments() {
         $('#profile-department').append(`<option value="${dept.id}">${dept.name}</option>`);
         $('#profile-department').append(`<option value disabled hidden selected>Choose a department</option>`);
         $('#edit-profile-department').append(`<option value="${dept.id}">${dept.name}</option>`);
-        $('#department-filters').append(`<div class="form-check"><input class="form-check-input" type="checkbox" value="${dept.id}"><label class="form-check-label" for="${dept.name}">${dept.name}</label></div>`)
+        $('#department-filters').append(`<div class="form-check"><input class="form-check-input" type="checkbox" value="${dept.id}"><label class="form-check-label" for="${dept.name}">${dept.name}</label></div>`);
         $('#department-list').append(`<div class="department-box"><input class="form-control" value="${dept.name}" type="text"/><div class="btn-box"><button type="button" class="btn btn-outline-warning" value="${dept.id}">Edit</button><button type="button" class="btn btn-outline-danger" value="${dept.id}">Remove</button></div></div>`);
       });
     },
@@ -46,7 +46,7 @@ function getAllLocations() {
     dataType: 'json',
     success: (result) => {
       result.data.forEach(location => {
-        $('#location-filters').append(`<div class="form-check"><input class="form-check-input" type="checkbox" value="${location.id}"><label class="form-check-label" for="${location.name}">${location.name}</label></div>`)
+        $('#location-filters').append(`<div class="form-check"><input class="form-check-input" type="checkbox" value="${location.id}"><label class="form-check-label" for="${location.name}">${location.name}</label></div>`);
         $('#department-location').append(`<option value="${location.id}">${location.name}</option>`)
         $('#location-list').append(`<div class="location-box"><input type="text" class="form-control" value="${location.name}"/><div class="btn-box"><button type="button" class="btn btn-outline-warning" value="${location.id}">Edit</button><button type="button" class="btn btn-outline-danger" value="${location.id}">Remove</button></div></div>`)
       });
@@ -262,7 +262,7 @@ $('document').ready(function() {
           departmentLocation: $('#department-location').val()
         },
         success: () => {
-          $('#alertMessage').html('Deparment create');
+          $('#alertMessage').html('Department create');
           resetDeparmentForm();
           $('#alertModal').modal('show');
         },
@@ -447,6 +447,15 @@ $('document').ready(function() {
     }
   });
 
+  //Filter events
+  $('#department-filters').on('change', () => {
+    $('#location-filters input:checkbox:checked').prop('checked', false);
+  });
+
+  $('#location-filters').on('change', () => {
+      $('#department-filters input:checkbox:checked').prop('checked', false);
+  });
+
   //Deparment filters  
   $('#btn-filter-department').on('click', () => {
     $('.loader-wrapper').fadeIn('slow');
@@ -535,8 +544,7 @@ $('document').ready(function() {
     $('.loader-wrapper').fadeIn('slow');
 
     //Reset cards
-    $('#cards-list').empty();
-    getAllCards();
+    $('#cards-list').reset();
 
     //Reset department list
     $('#profile-department').empty();
