@@ -26,6 +26,7 @@ function getAllDepartments() {
       //console.log(result);
       result.data.forEach(dept => {
         $('#profile-department').append(`<option value="${dept.id}">${dept.name}</option>`);
+        $('#profile-department').append(`<option value disabled hidden selected>Choose a department</option>`);
         $('#edit-profile-department').append(`<option value="${dept.id}">${dept.name}</option>`);
         $('#department-filters').append(`<div class="form-check"><input class="form-check-input" type="checkbox" value="${dept.id}"><label class="form-check-label" for="${dept.name}">${dept.name}</label></div>`)
         $('#department-list').append(`<div class="department-box"><input class="form-control" value="${dept.name}" type="text"/><div class="btn-box"><button type="button" class="btn btn-outline-warning" value="${dept.id}">Edit</button><button type="button" class="btn btn-outline-danger" value="${dept.id}">Remove</button></div></div>`);
@@ -424,7 +425,7 @@ $('document').ready(function() {
     //Edit location info
     if($(e.target).text() === 'Edit') {
       $('#confirmEditModal').modal('show');
-      $('#ConfirmEdit').on('click', () => {
+      $('#confirmEdit').on('click', () => {
         $.ajax({
           url: './libs/php/updateLocationByID.php',
           type: 'POST',
